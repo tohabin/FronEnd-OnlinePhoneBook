@@ -1,0 +1,55 @@
+<form id=formId (ngSubmit)="SignUpMethod(refForm)" #refForm="ngForm">
+
+  <!-- all massage -->
+  <div *ngIf ="showMsg" class="form-group">
+    <div class="alert alert-success text-center">** Registered<strong> Successfull </strong>! **</div>
+  </div>
+
+  <div class="form-group">
+    <label for="Username">Username</label>
+    <input  type="text" class="form-control" id="Username" #Username="ngModel" [(ngModel)]="userService.formData.UserName"
+      name="Username" placeholder="Enter name" required>
+    <div class="validation-error" *ngIf="Username.invalid&&Username.touched">*required</div>
+  </div>
+
+  <div class="form-group">
+    <label for="Email">Email</label>
+    <input type="text"  class="form-control" id="Email" #Email="ngModel" [(ngModel)]="userService.formData.Email"
+      name="Email"  placeholder="Enter Email" required email>
+    <div class="validation-error" *ngIf="Email.invalid&&Email.touched">
+      <span *ngIf="Email.hasError('required')">Enter Email required</span>
+      <span *ngIf="Email.hasError('email')">Email is not correct</span>
+
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="Password">Password</label>
+    <input type="text" class="form-control" id="Password" #Password="ngModel" [(ngModel)]="userService.formData.Password"
+      name="Password" placeholder="Password" required>
+    <div class="validation-error" *ngIf="Password.invalid&&Password.touched">password required</div>
+
+</div>
+<div class="form-group">
+    <label for="ConfirmPassword">Confirm Password</label>
+    <input type="text" class="form-control" id="ConfirmPassword" #ConfirmPassword="ngModel" [(ngModel)]="userService.formData.ConfirmPassword"
+      name="ConfirmPassword" placeholder="Confirm Passord" appIsEqualValidatordirective = "Password" required />
+
+      <div class="validation-error" *ngIf="ConfirmPassword.invalid&&ConfirmPassword.touched">
+        <span *ngIf="ConfirmPassword.hasError('required')">
+        Confirm Password is required.
+        </span>
+        <span  *ngIf="ConfirmPassword.hasError('passwordMatchError')">
+        Confirm Password & Password must be same.
+        </span>
+    </div>
+  </div>
+
+
+
+  <button type="submit" value="submit" [disabled]="refForm.invalid" class="btn btn-primary btn-lg btn-block">Register</button>
+
+
+</form>

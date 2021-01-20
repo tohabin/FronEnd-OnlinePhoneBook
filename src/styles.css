@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+.fa {
+  margin: 5px;
+  padding: 5px;
+  font-size: 15px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15%;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, .25);
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%);
+  color: white;
+}
+
+/* .table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #6495ED;
+} */
+
+/* You can add global styles to this file, and also import other style files */
+.form-group>input {
+  font-weight: bolder;
+}
+
+.form-group>label {
+  font-weight: lighter;
+}
+
+
+.jumbotron {
+  background-color: #fff;
+  padding-top: 32px;
+}
+
+table tr:hover {
+  cursor: pointer;
+}
+
+input.ng-touched.ng-invalid {
+  border-color: #dc3545;
+}
+
+div.validation-error {
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
